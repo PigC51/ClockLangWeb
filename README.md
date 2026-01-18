@@ -1,8 +1,10 @@
-# The Clock Language
+# English
+
+## The Clock Language
 
 Clock is a simple **compiled** programming language designed for learning and demonstrating the principles of programming language compilation. It uses a stack-based virtual machine to execute intermediate code and supports rich data types, control structures, operators, and built-in functions.
 
-## Main Features
+### Main Features
 
 * **Compiled Execution**: A complete compilation chain using a lexer, parser, code generator, and virtual machine.
 * **Basic Data Types**: Integer (int), Floating-point (float), String (str), Boolean (bool), Empty (ept).
@@ -17,9 +19,9 @@ Clock is a simple **compiled** programming language designed for learning and de
 * **String Operations**: lower(), upper(), titlef()
 * **Type Conversion**: setf() for explicit conversion, .= for shorthand conversion assignment.
 
-## Syntax Introduction
+### Syntax Introduction
 
-### Variable Definition and Assignment
+#### Variable Definition and Assignment
 
     >> Variable definition and initialization
     int(a = 10);               >> Define integer variable a initialized to 10
@@ -41,36 +43,36 @@ Clock is a simple **compiled** programming language designed for learning and de
     (a++);                     >> Increment variable a by 1
     (b--);                     >> Decrement variable b by 1
 
-### Data Types
+#### Data Types
 
-#### Integer (int)
+##### Integer (int)
 
 * Represents integers, supports positive and negative numbers.
 * Example: `int(a = 10); int(b = -5);`
 
-#### Floating-point (float)
+##### Floating-point (float)
 
 * Represents numbers with decimal points.
 * Example: `float(a = 3.14); float(b = -2.5);`
 
-#### String (str)
+##### String (str)
 
 * Represents text, enclosed in double quotes.
 * Example: `str(a = "Hello"); str(b = "World");`
 
-#### Boolean (bool)
+##### Boolean (bool)
 
 * Represents true or false, only two values: true and false.
 * Example: `bool(a = true); bool(b = false);`
 
-#### Empty (ept)
+##### Empty (ept)
 
 * Represents a null or undefined value.
 * Example: `int(a = ept);`
 
-### Operators
+#### Operators
 
-#### Arithmetic Operators
+##### Arithmetic Operators
 
 | Operator | Description | Example |
 | --- | --- | --- |
@@ -79,7 +81,7 @@ Clock is a simple **compiled** programming language designed for learning and de
 | *   | Multiplication | `int(a = 2 * 3);` → 6 |
 | /   | Division | `int(a = 6 / 2);` → 3 |
 
-#### Comparison Operators
+##### Comparison Operators
 
 | Operator | Description | Example |
 | --- | --- | --- |
@@ -90,7 +92,7 @@ Clock is a simple **compiled** programming language designed for learning and de
 | ==  | Equal to | `bool(a = 2 == 2);` → true |
 | !=  | Not equal to | `bool(a = 2 != 3);` → true |
 
-#### Logical Operators
+##### Logical Operators
 
 | Operator | Description | Example |
 | --- | --- | --- |
@@ -98,7 +100,7 @@ Clock is a simple **compiled** programming language designed for learning and de
 | \\  |     | OR  |
 | !   | NOT | `bool(a = !true);` → false |
 
-#### Assignment Operators
+##### Assignment Operators
 
 | Operator | Description | Example |
 | --- | --- | --- |
@@ -109,7 +111,7 @@ Clock is a simple **compiled** programming language designed for learning and de
 | /=  | Division assignment | `int(a = 6); (a /= 3);` → 2 |
 | .=  | Type conversion assignment | `int(a = 10); (a .= str);` → "10" |
 
-### Output Statement
+#### Output Statement
 
     >> Output a single value
     output : 100;
@@ -121,7 +123,7 @@ Clock is a simple **compiled** programming language designed for learning and de
     output : "PI = " : 3.14 : "\n";
     output : "Sum: " : (1 + 2 + 3) : "\n";
 
-### Input Statement
+#### Input Statement
 
     >> Whole line input (input.l)
     input.l : name;
@@ -135,9 +137,9 @@ Clock is a simple **compiled** programming language designed for learning and de
     input.g : city;
     output : "Your city is " : city;
 
-### Control Structures
+#### Control Structures
 
-#### if-elif-else Conditional Judgment
+##### if-elif-else Conditional Judgment
 
     int(score = 85);
     
@@ -151,7 +153,7 @@ Clock is a simple **compiled** programming language designed for learning and de
         output : "Need to improve!";
     }
 
-#### while Loop
+##### while Loop
 
     int(i = 1);
     int(sum = 0);
@@ -163,7 +165,7 @@ Clock is a simple **compiled** programming language designed for learning and de
     
     output : "Sum of 1 to 10 is " : sum;
 
-### String Operations
+#### String Operations
 
     str(text = "Hello, Clock!");
     
@@ -179,9 +181,9 @@ Clock is a simple **compiled** programming language designed for learning and de
     str(title_text = titlef("hello, world!"));
     output : "Title case: " : title_text;
 
-### Type Conversion
+#### Type Conversion
 
-#### Explicit Type Conversion (setf)
+##### Explicit Type Conversion (setf)
 
     str(number_str = "123");
     int(number_int = setf.int(number_str));
@@ -193,7 +195,7 @@ Clock is a simple **compiled** programming language designed for learning and de
     output : "Float: " : number_float;
     output : "Bool: " : number_bool;
 
-#### Shorthand Type Conversion Assignment (.=)
+##### Shorthand Type Conversion Assignment (.=)
 
     int(a = 10);
     (a .= str); >> Convert a to string
@@ -208,14 +210,14 @@ Clock is a simple **compiled** programming language designed for learning and de
     (a .= bool); >> Convert a to boolean
     output : "Bool: " : a;
 
-### Statement Terminator
+#### Statement Terminator
 
 * **Semicolon Required**: All non-control-structure statements (assignment, output, input, expressions, etc.) must end with a semicolon (`;`).
 * **Exceptions**: Control structure statements like if, elif, else, while do not require a semicolon.
 * **Error Example**: `output : 10` (Missing semicolon, will cause an error).
 * **Correct Example**: `output : 10;` (Has semicolon, correct).
 
-## Compiler Architecture
+### Compiler Architecture
 
 The Clock compiler uses a classic four-stage architecture:
 
@@ -224,7 +226,7 @@ The Clock compiler uses a classic four-stage architecture:
 3. **CodeGenerator**: Converts the AST into stack-based intermediate code.
 4. **VirtualMachine**: Executes the intermediate code.
 
-### Intermediate Code Instruction Set
+#### Intermediate Code Instruction Set
 
 Clock uses a stack-based intermediate code instruction set, mainly including:
 
@@ -238,7 +240,7 @@ Clock uses a stack-based intermediate code instruction set, mainly including:
 * **Type Conversion**: `CAST_INT`, `CAST_FLOAT`, `CAST_STRING`, `CAST_BOOL`
 * **String Operations**: `LOWER`, `UPPER`, `TITLEF`
 
-## IDE Features
+### IDE Features
 
 The Clock language provides a simple IDE with the following features:
 
@@ -248,15 +250,15 @@ The Clock language provides a simple IDE with the following features:
 * **Compile & Run**: One-click compilation and execution of Clock programs.
 * **Error Messages**: Displays detailed compilation error information and location.
 
-## Usage
+### Usage
 
 1. Write Clock source code files (extension `.clk`).
 2. Compile the source code using the Clock compiler.
 3. Execute the generated intermediate code.
 
-### Example Programs
+#### Example Programs
 
-#### Calculate Factorial
+##### Calculate Factorial
 
     int(n = 5);
     int(factorial = 1);
@@ -269,7 +271,7 @@ The Clock language provides a simple IDE with the following features:
     
     output : "Factorial of " : n : " is " : factorial;
 
-#### Print Fibonacci Sequence
+##### Print Fibonacci Sequence
 
     int(n = 10);
     int(a = 0);
@@ -286,7 +288,7 @@ The Clock language provides a simple IDE with the following features:
         (i++);
     }
 
-#### String Processing Example
+##### String Processing Example
 
     str(name = "John Doe");
     
@@ -295,7 +297,7 @@ The Clock language provides a simple IDE with the following features:
     output : "Uppercase: " : upper(name);
     output : "Title case: " : titlef(name);
 
-## Notes
+### Notes
 
 1. **Semicolon Requirement**: All non-control-structure statements must end with a semicolon.
 2. **Variable Scope**: Variables have global scope.
@@ -307,14 +309,14 @@ The Clock language provides a simple IDE with the following features:
 5. **String Concatenation**: Achieved using the colon separator in output statements.
 6. **Logical Operators**: Uses & for AND, | for OR, ! for NOT.
 
-## Technical Implementation
+### Technical Implementation
 
 * **Development Language**: C++
 * **Compilation Environment**: Compiler supporting C++11 and above.
 * **Design Patterns**: Singleton, Factory, Visitor patterns.
 * **Compilation Architecture**: Lexer → Parser → Code Generator → Virtual Machine.
 
-## Learning Resources
+### Learning Resources
 
 The Clock language is designed for learning compilation principles. You can understand the following by reading the source code:
 
@@ -326,7 +328,7 @@ The Clock language is designed for learning compilation principles. You can unde
 * Type system and type checking
 * Error handling mechanisms
 
-## Future Plans
+### Future Plans
 
 * Add function definition and call support.
 * Add array and structure types.
@@ -335,20 +337,30 @@ The Clock language is designed for learning compilation principles. You can unde
 * Add more built-in functions.
 * Support file I/O operations.
 
-## License
+### License
 
 MIT License
 
-### Download Link
+#### Download Link
 
 https://github.com/PigC51/ClockLang
 
+#### Official Website
 
-# Clock语言
+https://pigc51.github.io/ClockLangWeb/
+
+
+#
+#
+
+
+# 中文
+
+## Clock语言
 
 Clock是一种简单的**编译型**编程语言，设计用于学习和演示编程语言的编译原理。它使用基于栈的虚拟机执行中间代码，支持丰富的数据类型、控制结构、运算符和内置函数。
 
-## 主要功能
+### 主要功能
 
 * **编译型执行**：使用词法分析器、语法分析器、代码生成器和虚拟机的完整编译链
 * **基本数据类型**：整数(int)、浮点数(float)、字符串(str)、布尔值(bool)、空值(ept)
@@ -363,9 +375,9 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
 * **字符串操作**：lower(), upper(), titlef()
 * **类型转换**：setf()显式转换, .= 简写转换赋值
 
-## 语法介绍
+### 语法介绍
 
-### 变量定义与赋值
+#### 变量定义与赋值
 
     >> 变量定义与初始化  
     int(a = 10);               >> 定义整数变量a并初始化为10  
@@ -383,36 +395,36 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     (a++);                     >> 变量a自增1  
     (b--);                     >> 变量b自减1  
 
-### 数据类型
+#### 数据类型
 
-#### 整数 (int)
+##### 整数 (int)
 
 * 表示整数，支持正负数
 * 示例：`int(a = 10); int(b = -5);`
 
-#### 浮点数 (float)
+##### 浮点数 (float)
 
 * 表示带小数的数值
 * 示例：`float(a = 3.14); float(b = -2.5);`
 
-#### 字符串 (str)
+##### 字符串 (str)
 
 * 表示文本，使用双引号包围
 * 示例：`str(a = "Hello"); str(b = "World");`
 
-#### 布尔值 (bool)
+##### 布尔值 (bool)
 
 * 表示真或假，只有两个值：true和false
 * 示例：`bool(a = true); bool(b = false);`
 
-#### 空值 (ept)
+##### 空值 (ept)
 
 * 表示空值或未定义的值
 * 示例：`int(a = ept);`
 
-### 运算符
+#### 运算符
 
-#### 算术运算符
+##### 算术运算符
 
 | 运算符 | 描述  | 示例  |
 | --- | --- | --- |
@@ -421,7 +433,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
 | *   | 乘法  | `int(a = 2 * 3);` → 6 |
 | /   | 除法  | `int(a = 6 / 2);` → 3 |
 
-#### 比较运算符
+##### 比较运算符
 
 | 运算符 | 描述  | 示例  |
 | --- | --- | --- |
@@ -432,7 +444,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
 | ==  | 等于  | `bool(a = 2 == 2);` → true |
 | !=  | 不等于 | `bool(a = 2 != 3);` → true |
 
-#### 逻辑运算符
+##### 逻辑运算符
 
 | 运算符 | 描述  | 示例  |
 | --- | --- | --- |
@@ -440,7 +452,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
 | \\| | 或   | `bool(a = true \\| false);` → true |
 | !   | 非   | `bool(a = !true);` → false |
 
-#### 赋值运算符
+##### 赋值运算符
 
 | 运算符 | 描述  | 示例  |
 | --- | --- | --- |
@@ -451,7 +463,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
 | /=  | 除赋值 | `int(a = 6); (a /= 3);` → 2 |
 | .=  | 类型转换赋值 | `int(a = 10); (a .= str);` → "10" |
 
-### 输出语句
+#### 输出语句
 
     >> 输出单个值  
     output : 100;  
@@ -463,7 +475,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     output : "PI = " : 3.14 : "\n";  
     output : "Sum: " : (1 + 2 + 3) : "\n";  
 
-### 输入语句
+#### 输入语句
 
     >> 整行输入（input.l）  
     input.l : name;  
@@ -477,9 +489,9 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     input.g : city;  
     output : "Your city is " : city;  
 
-### 控制结构
+#### 控制结构
 
-#### if-elif-else 条件判断
+##### if-elif-else 条件判断
 
     int(score = 85);  
     
@@ -489,7 +501,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
         output : "Average!";} else {  
         output : "Need to improve!";}  
 
-#### while 循环
+##### while 循环
 
     int(i = 1);  
     int(sum = 0);  
@@ -499,7 +511,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     
     output : "Sum of 1 to 10 is " : sum;  
 
-### 字符串操作
+#### 字符串操作
 
     str(text = "Hello, Clock!");  
     
@@ -515,9 +527,9 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     str(title_text = titlef("hello, world!"));  
     output : "Title case: " : title_text;  
 
-### 类型转换
+#### 类型转换
 
-#### 显式类型转换 (setf)
+##### 显式类型转换 (setf)
 
     str(number_str = "123");  
     int(number_int = setf.int(number_str));  
@@ -529,7 +541,7 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     output : "Float: " : number_float;  
     output : "Bool: " : number_bool;  
 
-#### 简写类型转换赋值 (.=)
+##### 简写类型转换赋值 (.=)
 
     int(a = 10);  
     (a .= str); >> 将a转换为字符串  
@@ -544,14 +556,14 @@ Clock是一种简单的**编译型**编程语言，设计用于学习和演示�
     (a .= bool); >> 将a转换为布尔值  
     output : "Bool: " : a;  
 
-### 语句结束符
+#### 语句结束符
 
 * **分号要求**：所有非控制结构语句（赋值、输出、输入、表达式等）必须以分号(`;`)结尾
 * **例外**：if、elif、else、while等控制结构语句不需要分号
 * **错误示例**：`output : 10`（缺少分号，会报错）
 * **正确示例**：`output : 10;`（有分号，正确）
 
-## 编译器架构
+### 编译器架构
 
 Clock编译器采用经典的四阶段架构：
 
@@ -560,7 +572,7 @@ Clock编译器采用经典的四阶段架构：
 3. **代码生成器(CodeGenerator)**：将AST转换为基于栈的中间代码
 4. **虚拟机(VirtualMachine)**：执行中间代码
 
-### 中间代码指令集
+#### 中间代码指令集
 
 Clock使用基于栈的中间代码指令集，主要包括：
 
@@ -574,7 +586,7 @@ Clock使用基于栈的中间代码指令集，主要包括：
 * **类型转换**：`CAST_INT`, `CAST_FLOAT`, `CAST_STRING`, `CAST_BOOL`
 * **字符串操作**：`LOWER`, `UPPER`, `TITLEF`
 
-## IDE功能
+### IDE功能
 
 Clock语言提供了一个简单的IDE，具有以下功能：
 
@@ -584,15 +596,15 @@ Clock语言提供了一个简单的IDE，具有以下功能：
 * **编译运行**：一键编译和执行Clock程序
 * **错误提示**：显示详细的编译错误信息和位置
 
-## 使用方法
+### 使用方法
 
 1. 编写Clock源代码文件（扩展名为.clk）
 2. 使用Clock编译器编译源代码
 3. 执行生成的中间代码
 
-### 示例程序
+#### 示例程序
 
-#### 计算阶乘
+##### 计算阶乘
 
     int(n = 5);  
     int(factorial = 1);  
@@ -603,7 +615,7 @@ Clock语言提供了一个简单的IDE，具有以下功能：
     
     output : "Factorial of " : n : " is " : factorial;  
 
-#### 打印斐波那契数列
+##### 打印斐波那契数列
 
     int(n = 10);  
     int(a = 0);  
@@ -615,7 +627,7 @@ Clock语言提供了一个简单的IDE，具有以下功能：
     while (i < n) {  
         output : a : " ";    int(temp = a + b);    (a = b);    (b = temp);    (i++);}  
 
-#### 字符串处理示例
+##### 字符串处理示例
 
     str(name = "John Doe");  
     
@@ -624,7 +636,7 @@ Clock语言提供了一个简单的IDE，具有以下功能：
     output : "Uppercase: " : upper(name);  
     output : "Title case: " : titlef(name);  
 
-## 注意事项
+### 注意事项
 
 1. **分号要求**：所有非控制结构语句必须以分号结尾
 2. **变量作用域**：变量具有全局作用域
@@ -636,14 +648,14 @@ Clock语言提供了一个简单的IDE，具有以下功能：
 5. **字符串拼接**：使用output语句的冒号分隔实现
 6. **逻辑运算符**：使用&表示与，|表示或，!表示非
 
-## 技术实现
+### 技术实现
 
 * **开发语言**：C++
 * **编译环境**：支持C++11及以上的编译器
 * **设计模式**：单例模式、工厂模式、访问者模式
 * **编译架构**：词法分析器 → 语法分析器 → 代码生成器 → 虚拟机
 
-## 学习资源
+### 学习资源
 
 Clock语言设计用于学习编译原理，您可以通过阅读源代码了解：
 
@@ -655,7 +667,7 @@ Clock语言设计用于学习编译原理，您可以通过阅读源代码了解
 * 类型系统和类型检查
 * 错误处理机制
 
-## 未来计划
+### 未来计划
 
 * 添加函数定义和调用支持
 * 增加数组和结构体类型
@@ -664,10 +676,14 @@ Clock语言设计用于学习编译原理，您可以通过阅读源代码了解
 * 添加更多内置函数
 * 支持文件I/O操作
 
-## 许可证
+### 许可证
 
 MIT License
 
-### 下载地址
+#### 下载地址
 
 https://github.com/PigC51/ClockLang
+
+#### 官方网站
+
+https://pigc51.github.io/ClockLangWeb/
